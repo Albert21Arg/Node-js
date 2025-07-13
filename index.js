@@ -20,7 +20,10 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 //middlewares
-app.use(cors());
+app.use(cors({
+  origin: "https://tu-frontend.onrender.com",
+  credentials: true
+}));;
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(morgan("dev"));
